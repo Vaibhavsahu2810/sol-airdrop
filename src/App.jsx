@@ -11,7 +11,7 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 import { clusterApiUrl } from "@solana/web3.js";
 import "@solana/wallet-adapter-react-ui/styles.css";
-
+import RequestAirdrop from "./Airdrop";
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
@@ -22,10 +22,10 @@ function App() {
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
             <WalletMultiButton />
             <WalletDisconnectButton />
-          </div>
+ 
+          <RequestAirdrop></RequestAirdrop>
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
